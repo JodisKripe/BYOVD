@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
 	
 	HANDLE hDriver = CreateFile(DRIVER_SYMLINK, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	if (!hDriver) {
+	if (!hDriver || hDriver == 0xffffffffffffffff) {
 		printf("Could not open handle to the Driver\n");
 		exit(1);
 	}

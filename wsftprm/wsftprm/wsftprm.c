@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
 	
 	HANDLE hDriver = CreateFileW(DRIVER_DEVICE, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
-	if (!hDriver) {
+	if (!hDriver || hDriver == 0xffffffffffffffff) {
 		printf("SymLink unavailable!");
 		exit(1);
 	}
