@@ -1,7 +1,7 @@
 # BYOVD
 Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 
-# Drivers Added
+# EDR Killer Drivers Added
 - [X] BdApiUtil (BdApiUtil.sys)
 - [ ] K7RKScan (K7RKScan.sys)
 - [X] KsApi64 (ksapi64.sys)
@@ -9,6 +9,9 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 - [X] TrueSight (truesight.sys)
 - [X] Viragt64 (viragt64.sys)
 - [X] wsftprm (wsftprm.sys)
+
+# To Do
+- [ ] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
 
 # Testing Kernel Drivers
 ## Create and start Service
