@@ -1,6 +1,15 @@
 # BYOVD
 Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 
+# Drivers Added
+- [X] BdApiUtil (BdApiUtil.sys)
+- [] K7RKScan (K7RKScan.sys)
+- [X] KsApi64 (ksapi64.sys)
+- [X] TfSysMon (SysMon.sys)
+- [X] TrueSight (truesight.sys)
+- [X] Viragt64 (viragt64.sys)
+- [X] wsftprm (wsftprm.sys)
+
 # Testing Kernel Drivers
 ## Create and start Service
 > sc.exe create SysMon type= kernel start= demand binPath= 'D:\BYOVD\TfSysMon\SysMon.sys' DisplayName= 'SysMonTF'
