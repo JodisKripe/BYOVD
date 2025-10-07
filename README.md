@@ -12,6 +12,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 
 # To Do
 - [ ] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
+- [X] Create function to handle to IOCTL_CODE blast based on process name
 
 # Testing Kernel Drivers
 ## Create and start Service
