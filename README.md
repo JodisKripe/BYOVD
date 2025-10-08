@@ -11,7 +11,8 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 - [X] wsftprm (wsftprm.sys)
 
 # To Do
-- [ ] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
+- [X] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
+- - [ ] Fix Formatting Issues
 - [X] Create function to handle to IOCTL_CODE blast based on process name
 
 # Testing Kernel Drivers
