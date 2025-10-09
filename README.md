@@ -12,7 +12,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 
 # To Do
 - [X] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
-- - [ ] Move ZwTerminateProcessHunter to a standalone repository and add as submodule
+- - [X] Move ZwTerminateProcessHunter to a standalone repository and add as submodule
 - [X] Create function to handle to IOCTL_CODE blast based on process name
 
 # Testing Kernel Drivers
@@ -29,5 +29,5 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 ## Or just use OSRLoader :)
 https://www.osronline.com/article.cfm%5Earticle=157.htm
 
-# DriverCommunication.zip
-Boilerplate Visual Studio Template (BdApiUtil) to prepare fresh EDRKillers
+# EDRKiller.zip
+Boilerplate Visual Studio Template to prepare fresh EDRKillers
