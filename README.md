@@ -12,7 +12,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 
 # To Do
 - [X] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
-- - [ ] Fix Formatting Issues
+- - [ ] Move ZwTerminateProcessHunter to a standalone repository and add as submodule
 - [X] Create function to handle to IOCTL_CODE blast based on process name
 
 # Testing Kernel Drivers
