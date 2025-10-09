@@ -1,3 +1,6 @@
 [submodule "ZwTerminateProcessHunter"]
 	path = ZwTerminateProcessHunter
 	url = git@github.com:JodisKripe/ZwTerminateProcessHunter.git
+[submodule "DriverHunter"]
+	path = DriverHunter
+	url = git@github.com:JodisKripe/DriverHunter.git
