@@ -10,6 +10,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 - [X] Viragt64 (viragt64.sys)
 - [X] wsftprm (wsftprm.sys)
 - [X] Blackout (gmer.sys) {revoked cert}
+- [X] NSecKrnl  (NSecKrnl.sys)
 
 # To Do
 - [X] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
