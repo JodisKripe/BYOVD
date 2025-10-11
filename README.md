@@ -12,6 +12,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 - [X] Blackout (gmer.sys) {revoked cert}
 - [X] NSecKrnl  (NSecKrnl.sys)
 - [X] RentDrv2  (rentdrv2.sys)
+- [X] mhyProt   (mhyprot2.sys) {revoked cert}
 
 # To Do
 - [X] Create IAT Parser to check for ZwTerminateProcess in kernel drivers
