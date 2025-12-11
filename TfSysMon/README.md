@@ -6,7 +6,7 @@ SysMon.sys was decompiled and opened up in IDA Free <br>
 The DriverObject was passed to a different function `sub_17484`. We can assume that all the activity happens within that function. The DeviceName, SymLink and the IOControlRoutine was found from `sub_17848`<br>
 ![RealDriverEntry](./media/2.png)
 
-|  |  |
+| Key | Value |
 |--|--|
 | DriverName| \\\\Device\\TfSysMon|
 | SymLink| \\\\DosDevices\\TfSysMon |
@@ -32,7 +32,7 @@ The function has many wrongly tagged data types which need to be fixed, but it c
 The IOCTL code and Payload type can be discovered from where the `TerminateProcess` function is being called within `sub_177D8` <br>
 ![IOCTL](./media/7.png)
 
-|  |  |
+| Key | Value |
 |--|--|
 |IOCTL Code| 0xB4A00404 |
 |Payload| Size more than 24, PID as an unsigned integer starting from the +4 offset |
