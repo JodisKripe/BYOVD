@@ -3,7 +3,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 
 # EDR Killer Drivers Added
 - [X] [BdApiUtil](./BdApiUtil/README.md) (BdApiUtil.sys)
-- [X] K7RKScan (K7RKScan.sys)
+- [X] [K7RKScan](./K7RKScan/README.md) (K7RKScan.sys)
 - [X] KsApi64 (ksapi64.sys)
 - [X] [TfSysMon](./TfSysMon/README.md) (SysMon.sys)
 - [X] TrueSight (truesight.sys)
