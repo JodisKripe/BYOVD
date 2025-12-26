@@ -3,7 +3,7 @@
 SysMon.sys was decompiled and opened up in IDA Free <br>
 ![IDA Free](./media/1.png)
 
-The DriverObject was passed to a different function `sub_17484`. We can assume that all the activity happens within that function. The DeviceName, SymLink and the IOControlRoutine was found from `sub_17848`<br>
+The DriverObject was passed to a different function `sub_17484`. We can assume that all the activity happens within that function. The DeviceName, SymLink and the IOControlRoutine was found from `sub_17484`<br>
 ![RealDriverEntry](./media/2.png)
 
 | Key | Value |
@@ -12,7 +12,7 @@ The DriverObject was passed to a different function `sub_17484`. We can assume t
 | SymLink| \\\\DosDevices\\TfSysMon |
 |IoControlRoutine|sub_17694|
 
-Now we work backwards from ZwTerminateProcess. The call is only made within once function, `sub_1837C`<br>
+Now we work backwards from ZwTerminateProcess. The call is only made within one function, viz. `sub_1837C`<br>
 ![ZwTerminateProcess](./media/3.png)
 
 The function is fairly straightforward, it performs the following actions:

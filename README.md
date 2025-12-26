@@ -8,7 +8,7 @@ Bring Your Own Vulnerable Driver PoCs developed to learn about the process.
 - [X] [TfSysMon](./TfSysMon/README.md) (SysMon.sys)
 - [X] TrueSight (truesight.sys)
 - [X] Viragt64 (viragt64.sys)
-- [X] wsftprm (wsftprm.sys)
+- [X] [wsftprm](./wsftprm/README.md) (wsftprm.sys)
 - [X] Blackout (gmer.sys) {revoked cert}
 - [X] NSecKrnl  (NSecKrnl.sys)
 - [X] RentDrv2  (rentdrv2.sys)
